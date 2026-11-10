@@ -75,7 +75,7 @@ header{position:relative}
   .foot{flex-direction:column}
 }
 .banner{background-color:#0f5c5e;background-size:cover;background-position:center;color:#fff;display:flex;align-items:center;min-height:clamp(380px,68vh,620px)}
-.banner-inner{width:100%;padding-top:56px;padding-bottom:56px}
+.banner-inner{width:100%;padding-top:56px;padding-bottom:46px}
 .banner h1{font-size:clamp(34px,8vw,76px);font-weight:800;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .banner p{max-width:46ch;color:rgba(255,255,255,.9);font-size:clamp(17px,2.4vw,21px);margin:20px 0 28px}
 .btn.pop{background:var(--pop);color:#16262b}

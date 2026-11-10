@@ -40,7 +40,7 @@ export default function ContactForm() {
             <option>Not sure yet</option>
           </select>
         </label>
-        <label>Your budget<input name="budget" placeholder="e.g. $3,000" required /></label>
+        <label>Your budget<input name="budget" placeholder="e.g. ₦000" required /></label>
       </div>
       <label>Describe your app or website
         <small>What should it do, and who will use it?</small>

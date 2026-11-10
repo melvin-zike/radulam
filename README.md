@@ -1,4 +1,4 @@
-# Studio site (Next.js)
+# Web design site (Next.js)
 
 ## Run locally
 1. Install Node.js 20+ and VS Code.

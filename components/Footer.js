@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap foot">
         <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
         <span>
-          <Link href="/services">Services</Link> · <Link href="/about">About</Link> · <a href={`mailto:${site.email}`}>{site.email}</a>
+          <Link href="/services">Services</Link> · <Link href="/about">About</Link> · <Link href="/contact">Contact</Link> · <a href={`mailto:${site.email}`}>{site.email}</a>
         </span>
       </div>
     </footer>

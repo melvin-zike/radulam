@@ -27,6 +27,7 @@ export default function Header() {
           <Link href="/services" onClick={close}>Services</Link>
           <Link href="/#work" onClick={close}>Our work</Link>
           <Link href="/about" onClick={close}>About</Link>
+          <Link href="/contact" onClick={close}>Contact</Link>
           <Link className="navcta" href="/#contact" onClick={close}>Start a project</Link>
         </nav>
       </header>

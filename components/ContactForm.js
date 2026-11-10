@@ -29,6 +29,9 @@ export default function ContactForm() {
         <label>Your name<input name="name" required autoComplete="name" /></label>
         <label>Email<input name="email" type="email" required autoComplete="email" /></label>
       </div>
+      <label>Phone number <small>Optional. Include your country code, e.g. +1 555 123 4567</small>
+        <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+" />
+      </label>
       <div className="row">
         <label>What do you need?
           <select name="type" required defaultValue="">
@@ -40,7 +43,7 @@ export default function ContactForm() {
             <option>Not sure yet</option>
           </select>
         </label>
-        <label>Your budget<input name="budget" placeholder="e.g. ₦000" required /></label>
+        <label>Your budget<input name="budget" placeholder="e.g. $3,000" required /></label>
       </div>
       <label>Describe your app or website
         <small>What should it do, and who will use it?</small>

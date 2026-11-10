@@ -10,12 +10,16 @@ export async function POST(req) {
   // Honeypot: bots fill this in, people never see it.
   if (body.company) return NextResponse.json({ ok: true });
 
-  const { name, email, type, budget, details } = body;
+  const { name, email, phone = "", type, budget, details } = body;
   if (!name || !email || !type || !budget || !details) {
     return NextResponse.json({ error: "Please fill in every field." }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+  }
+
+  if (phone && !/^[+\d\s().-]{6,25}$/.test(phone)) {
+    return NextResponse.json({ error: "Enter a valid phone number." }, { status: 400 });
   }
 
   const key = process.env.RESEND_API_KEY;
@@ -33,7 +37,7 @@ export async function POST(req) {
       reply_to: email,
       subject: `New project enquiry from ${name}`,
       html: `<h2>New enquiry</h2>
-        <p><b>Name:</b> ${esc(name)}<br><b>Email:</b> ${esc(email)}<br><b>Needs:</b> ${esc(type)}<br><b>Budget:</b> ${esc(budget)}</p>
+        <p><b>Name:</b> ${esc(name)}<br><b>Email:</b> ${esc(email)}<br><b>Phone:</b> ${esc(phone) || "not given"}<br><b>Needs:</b> ${esc(type)}<br><b>Budget:</b> ${esc(budget)}</p>
         <p><b>Project description:</b></p><p>${esc(details).replace(/\n/g, "<br>")}</p>`,
     }),
   });
